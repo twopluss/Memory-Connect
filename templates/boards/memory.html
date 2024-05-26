@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header.html :: head"/>
+<style>
+    img {
+        width: 500px; /* 원하는 너비로 조절 */
+        height: 300px; /* 원하는 높이로 조절 */
+        margin: 30px; /* 상하좌우 각각 30픽셀의 여백을 추가하여 간격을 조절 */
+        border: 5px solid brown; /* 5px 두께의 브라운 테두리를 지정합니다 */
+    }
+    .image-size{
+        margin-left: 200px;
+    }
+</style>
+<body style="background-color: tan"></body>
+<div th:replace="fragments/header.html :: header('memory')"/>
+<br/><br/>
+<div class="row">
+    <div class="row" style="display: flex; justify-content: center; align-items: center;">
+        <div class="col-8">
+            <h1 style="text-align: center; font-family: 'Nanum Gothic', sans-serif; color: black; font-weight: bold; margin-bottom: 30px; background-color:brown; border-radius: 20px">추억 전시관</h1>
+        </div>
+    </div>
+
+    <!-- 드롭다운을 위한 코드 -->
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div class="dropdown" style="margin-right: 20px;">
+            <button class="btn selected-btn">1960</button>
+            <div class="dropdown-content">
+                <a href="/boards/boards/clothes/1960" id="clothes1960">추억의 옷</a>
+                <a href="/boards/boards/food/1960" id="food1960">추억의 음식</a>
+                <a href="/boards/boards/movie/1960" id="movie1960">추억의 영화</a>
+                <a href="/boards/boards/game/1960" id="game1960">추억의 게임</a>
+            </div>
+        </div>
+
+        <div class="dropdown" style="margin-right: 20px;">
+            <button class="btn selected-btn">1970</button>
+            <div class="dropdown-content">
+                <a href="/boards/boards/clothes/1970" id="clothes1970">추억의 옷</a>
+                <a href="/boards/boards/food/1970" id="food1970">추억의 음식</a>
+                <a href="/boards/boards/movie/1970" id="movie1970">추억의 영화</a>
+                <a href="/boards/boards/game/1970" id="game1970">추억의 게임</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn selected-btn" style="margin: 0px 30px;">1980</button>
+            <div class="dropdown-content">
+                <a href="/boards/boards/clothes/1980" id="clothes1980">추억의 옷</a>
+                <a href="/boards/boards/food/1980" id="food1980">추억의 음식</a>
+                <a href="/boards/boards/movie/1980" id="movie1980">추억의 영화</a>
+                <a href="/boards/boards/movie/1960" id="game1980">추억의 게임</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn selected-btn" style="margin: 0px 30px;">1990</button>
+            <div class="dropdown-content">
+                <a href="/boards/boards/clothes/1980" id="clothes1990">추억의 옷</a>
+                <a href="/boards/boards/food/1980" id="food1990">추억의 음식</a>
+                <a href="/boards/boards/movie/1980" id="movie1990">추억의 영화</a>
+                <a href="/boards/boards/movie/1960" id="game1990">추억의 게임</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn selected-btn" style="margin: 0px 30px;">2000</button>
+            <div class="dropdown-content">
+                <a href="/boards/boards/clothes/2000" id="clothes2000">추억의 옷</a>
+                <a href="/boards/boards/food/2000" id="food2000">추억의 음식</a>
+                <a href="/boards/boards/movie/2000" id="movie2000">추억의 영화</a>
+                <a href="/boards/boards/movie/1960" id="game2000">추억의 게임</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn selected-btn" style="margin: 0px 30px;">2010</button>
+            <div class="dropdown-content">
+                <a href="/boards/boards/clothes/2020" id="clothes2010">추억의 옷</a>
+                <a href="/boards/boards/food/2020" id="food2010">추억의 음식</a>
+                <a href="/boards/boards/movie/2020" id="movie2010">추억의 영화</a>
+                <a href="/boards/boards/movie/1960" id="game2010">추억의 게임</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+<br/>
+
+
+<!-- 1960 년대 -->
+<div class="image-size" id="clothes1960Container" style="display: none;">
+    <!-- 1960 추억의 옷 이미지를 표시할 div -->
+    <img src="/1960clothes/옷1.jpg" />
+    <img src="/1960clothes/옷2.JPG" />
+    <img src="/1960clothes/옷3.JPG"/>
+    <img src="/1960clothes/옷4.jpg"/>
+    <img src="/1960clothes/옷5.jpg"/>
+</div>
+
+<div class="image-size" id="food1960Container" style="display: none;">
+    <!-- 1960 추억의 음식 이미지를 표시할 div -->
+    <img src="/1960food/음식1.JPG" />
+    <img src="/1960food/음식2.JPG" />
+    <img src="/1960food/음식3.JPG" />
+    <img src="/1960food/음식4.JPG" />
+    <img src="/1960food/음식5.JPG" />
+    <!-- 추가 이미지 -->
+</div>
+
+<div class="image-size" id="movie1960Container" style="display: none;">
+    <!-- 1960 추억의 영화 이미지를 표시할 div -->
+    <img src="/1960movie/영화1.jpg"/>
+    <img src="/1960movie/영화2.jpg"/>
+    <img src="/1960movie/영화3.jpg"/>
+    <img src="/1960movie/영화4.jpg"/>
+    <img src="/1960movie/영화5.JPG"/>
+
+    <!-- 추가 이미지 -->
+</div>
+
+<div class="image-size" id="game1960Container" style="display: none;">
+    <!-- 1960 추억의 영화 이미지를 표시할 div -->
+    <img src="/1960game/게임1.jpg"/>
+    <img src="/1960game/게임2.jpg"/>
+    <img src="/1960game/게임3.JPG"/>
+    <img src="/1960game/게임4.JPG"/>
+    <img src="/1960game/게임5.JPG"/>
+    <!-- 추가 이미지 -->
+</div>
+
+
+<!-- 1970 년대 -->
+<div class="image-size" id="clothes1970Container" style="display: none;">
+    <!-- 1960 추억의 옷 이미지를 표시할 div -->
+    <img src="/1970clothes/옷1.JPG"/>
+    <img src="/1970clothes/옷2.JPG" />
+    <img src="/1970clothes/옷3.JPG"/>
+    <img src="/1970clothes/옷4.JPG"/>
+    <img src="/1970clothes/옷5.JPG"/>
+    <!-- 추가 이미지 -->
+</div>
+
+<div class="image-size" id="food1970Container" style="display: none;">
+    <!-- 1960 추억의 음식 이미지를 표시할 div -->
+    <img src="/1970food/음식1.JPG" />
+    <img src="/1970food/음식2.JPG" />
+    <img src="/1970food/음식3.JPG" />
+    <img src="/1970food/음식4.JPG" />
+    <img src="/1970food/음식5.JPG" />
+    <!-- 추가 이미지 -->
+</div>
+
+<div class="image-size" id="movie1970Container" style="display: none;">
+    <!-- 1960 추억의 영화 이미지를 표시할 div -->
+    <img src="/1970movie/영화1.JPG"/>
+    <img src="/1970movie/영화2.JPG"/>
+    <img src="/1970movie/영화3.JPG"/>
+    <img src="/1970movie/영화4.JPG"/>
+    <img src="/1970movie/영화5.JPG"/>
+
+    <!-- 추가 이미지 -->
+</div>
+
+<div class="image-size" id="game1970Container" style="display: none;">
+    <!-- 1960 추억의 영화 이미지를 표시할 div -->
+    <img src="/1970game/게임1.JPG"/>
+    <img src="/1970game/게임2.JPG"/>
+    <img src="/1970game/게임3.JPG"/>
+    <img src="/1970game/게임4.JPG"/>
+    <img src="/1970game/게임5.JPG"/>
+    <!-- 추가 이미지 -->
+</div>
+
+
+
+
+<!-- 1980 년대 -->
+<div class="image-size" id="clothes1980Container" style="display: none;">
+    <!-- 1980 추억의 옷 이미지를 표시할 div -->
+    <img src="/1980clothes/옷1.JPG"/>
+    <img src="/1980clothes/옷2.JPG" />
+    <img src="/1980clothes/옷3.JPG"/>
+    <img src="/1980clothes/옷4.JPG"/>
+    <img src="/1980clothes/옷5.JPG"/>
+    <!-- 추가 이미지 -->
+</div>
+
+<div class="image-size" id="food1980Container" style="display: none;">
+    <!-- 1980 추억의 음식 이미지를 표시할 div -->
+    <img src="/1980food/음식1.JPG" />
+    <img src="/1980food/음식2.JPG" />
+    <img src="/1980food/음식3.JPG" />
+    <img src="/1980food/음식4.JPG" />
+    <img src="/1980food/음식5.JPG" />
+    <!-- 추가 이미지 -->
+</div>
+
+<div class="image-size" id="movie1980Container" style="display: none;">
+    <!-- 1980 추억의 영화 이미지를 표시할 div -->
+    <img src="/1980movie/영화1.JPG"/>
+    <img src="/1980movie/영화2.JPG"/>
+    <img src="/1980movie/영화3.JPG"/>
+    <img src="/1980movie/영화4.JPG"/>
+    <img src="/1980movie/영화5.JPG"/>
+    <!-- 추가 이미지 -->
+</div>
+
+<div class="image-size" id="game1980Container" style="display: none;">
+    <!-- 1980 추억의 영화 이미지를 표시할 div -->
+    <img src="/1980game/게임1.JPG"/>
+    <img src="/1980game/게임2.JPG"/>
+    <img src="/1980game/게임3.JPG"/>
+    <img src="/1980game/게임4.JPG"/>
+    <img src="/1980game/게임5.JPG"/>
+    <!-- 추가 이미지 -->
+</div>
+
+<!-- 1990 년대 -->
+<div class="image-size" id="clothes1990Container" style="display: none;">
+    <!-- 1980 추억의 옷 이미지를 표시할 div -->
+    <img src="/1990clothes/옷1.JPG"/>
+    <img src="/1990clothes/옷2.JPG" />
+    <img src="/1990clothes/옷3.JPG"/>
+    <img src="/1990clothes/옷4.JPG"/>
+    <img src="/1990clothes/옷5.JPG"/>
+    <!-- 추가 이미지 -->
+</div>
+
+<div class="image-size" id="food1990Container" style="display: none;">
+    <!-- 1980 추억의 음식 이미지를 표시할 div -->
+    <img src="/1990food/음식1.JPG" />
+    <img src="/1990food/음식2.JPG" />
+    <img src="/1990food/음식3.JPG" />
+    <img src="/1990food/음식4.JPG" />
+    <img src="/1990food/음식5.JPG" />
+    <!-- 추가 이미지 -->
+</div>
+
+<div class="image-size" id="movie1990Container" style="display: none;">
+    <!-- 1980 추억의 영화 이미지를 표시할 div -->
+    <img src="/1990movie/영화1.JPG"/>
+    <img src="/1990movie/영화2.JPG"/>
+    <img src="/1990movie/영화3.JPG"/>
+    <img src="/1990movie/영화4.JPG"/>
+    <img src="/1990movie/영화5.JPG"/>
+    <!-- 추가 이미지 -->
+</div>
+
+<div class="image-size" id="game1990Container" style="display: none;">
+    <!-- 1980 추억의 영화 이미지를 표시할 div -->
+    <img src="/1990game/게임1.JPG"/>
+    <img src="/1990game/게임2.JPG"/>
+    <img src="/1990game/게임3.JPG"/>
+    <img src="/1990game/게임4.JPG"/>
+    <img src="/1990game/게임5.JPG"/>
+    <!-- 추가 이미지 -->
+</div>
+
+<!-- 2000 년대 -->
+<div class="image-size" id="clothes2000Container" style="display: none;">
+    <!-- 2000 추억의 옷 이미지를 표시할 div -->
+    <img src="/2000clothes/옷1.JPG"/>
+    <img src="/2000clothes/옷2.JPG" />
+    <img src="/2000clothes/옷3.JPG"/>
+    <img src="/2000clothes/옷4.JPG"/>
+    <img src="/2000clothes/옷5.JPG"/>
+    <!-- 추가 이미지 -->
+</div>
+
+<div class="image-size" id="food2000Container" style="display: none;">
+    <!-- 2000 추억의 음식 이미지를 표시할 div -->
+    <img src="/2000food/음식1.JPG" />
+    <img src="/2000food/음식2.JPG" />
+    <img src="/2000food/음식3.JPG" />
+    <img src="/2000food/음식4.JPG" />
+    <img src="/2000food/음식5.JPG" />
+    <!-- 추가 이미지 -->
+</div>
+
+<div class="image-size" id="movie2000Container" style="display: none;">
+    <!-- 2000 추억의 영화 이미지를 표시할 div -->
+    <img src="/2000movie/영화1.JPG"/>
+    <img src="/2000movie/영화2.JPG"/>
+    <img src="/2000movie/영화3.JPG"/>
+    <img src="/2000movie/영화4.JPG"/>
+    <img src="/2000movie/영화5.JPG"/>
+    <!-- 추가 이미지 -->
+</div>
+
+<div class="image-size" id="game2000Container" style="display: none;">
+    <!-- 2000 추억의 영화 이미지를 표시할 div -->
+    <img src="/2000game/게임1.JPG"/>
+    <img src="/2000game/게임2.JPG"/>
+    <img src="/2000game/게임3.JPG"/>
+    <img src="/2000game/게임4.JPG"/>
+    <img src="/2000game/게임5.JPG"/>
+    <!-- 추가 이미지 -->
+</div>
+
+<!-- 2010 년대 -->
+
+<div class="image-size" id="clothes2010Container" style="display: none;">
+    <!-- 2020 추억의 옷 이미지를 표시할 div -->
+    <img src="/2010clothes/옷1.JPG"/>
+    <img src="/2010clothes/옷2.JPG" />
+    <img src="/2010clothes/옷3.JPG"/>
+    <img src="/2010clothes/옷4.JPG"/>
+    <img src="/2010clothes/옷5.JPG"/>
+    <!-- 추가 이미지 -->
+</div>
+
+
+<div class="image-size" id="food2010Container" style="display: none;">
+    <!-- 2010 추억의 음식 이미지를 표시할 div -->
+    <img src="/2010food/음식1.JPG" />
+    <img src="/2010food/음식2.JPG" />
+    <img src="/2010food/음식3.JPG" />
+    <img src="/2010food/음식4.JPG" />
+    <img src="/2010food/음식5.JPG" />
+    <!-- 추가 이미지 -->
+</div>
+
+<div class="image-size" id="movie2010Container" style="display: none;">
+    <!-- 2020 추억의 영화 이미지를 표시할 div -->
+    <img src="/2010movie/영화1.JPG"/>
+    <img src="/2010movie/영화2.JPG"/>
+    <img src="/2010movie/영화3.JPG"/>
+    <img src="/2010movie/영화4.JPG"/>
+    <img src="/2010movie/영화5.JPG"/>
+    <!-- 추가 이미지 -->
+</div>
+
+<div class="image-size" id="game2010Container" style="display: none;">
+    <!-- 2020 추억의 영화 이미지를 표시할 div -->
+    <img src="/2010game/게임1.JPG"/>
+    <img src="/2010game/게임2.JPG"/>
+    <img src="/2010game/게임3.JPG"/>
+    <img src="/2010game/게임4.JPG"/>
+    <img src="/2010game/게임5.JPG"/>
+    <!-- 추가 이미지 -->
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // 카테고리 및 연도에 따라 각각의 이미지를 보여주는 함수를 정의합니다.
+        function showImages(event) {
+            event.preventDefault(); // 기본 동작(링크 이동)을 방지합니다.
+
+            // 모든 이미지 컨테이너를 숨깁니다.
+            var imageContainers = document.querySelectorAll('[id$="Container"]');
+            imageContainers.forEach(function(container) {
+                container.style.display = "none";
+            });
+
+            // 클릭된 링크의 `id`를 사용하여 이미지 컨테이너 `id`를 찾습니다.
+            var linkId = event.target.id;
+            var containerId = linkId + "Container";
+            var imageContainer = document.getElementById(containerId);
+
+            // 이미지 컨테이너를 보이게 합니다.
+            if (imageContainer) {
+                imageContainer.style.display = "block";
+            }
+        }
+
+        // 각 링크에 클릭 이벤트를 추가합니다.
+        var links = document.querySelectorAll('[id^="clothes"], [id^="food"], [id^="movie"], [id^="game"]');
+        links.forEach(function(link) {
+            link.addEventListener("click", showImages);
+        });
+
+        // 이미지 컨테이너에 클릭 이벤트를 추가하여 이벤트 전파를 중지합니다.
+        var imageContainers = document.querySelectorAll('[id$="Container"]');
+        imageContainers.forEach(function(container) {
+            // 이미지 컨테이너 클릭 시 이벤트 전파를 중지
+            container.addEventListener("click", function(event) {
+                event.stopPropagation(); // 이벤트 전파를 막습니다.
+            });
+
+            // 이미지 컨테이너 내부 요소(이미지 등)에 클릭 이벤트를 추가
+            var innerElements = container.querySelectorAll("img");
+            innerElements.forEach(function(element) {
+                element.addEventListener("click", function(event) {
+                    event.stopPropagation(); // 이벤트 전파를 막습니다.
+                });
+            });
+        });
+    });
+
+
+    // 버튼을 클릭했을 때 호출되는 함수
+    function handleButtonClick(button) {
+        // 모든 버튼을 선택
+        const buttons = document.querySelectorAll('.selected-btn');
+
+        // 모든 버튼에서 'active' 클래스를 제거하여 원래 색상으로 되돌림
+        buttons.forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // 클릭한 버튼에 'active' 클래스를 추가하여 노란색으로 변경
+        button.classList.add('active');
+    }
+
+</script>
+
+</body>
+</html>

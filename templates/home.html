@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header.html :: head"></head>
+<style>
+    /* 전체 ul의 스타일을 정의합니다. */
+    .card-body ul {
+        padding: 0; /* ul의 기본 패딩 제거 */
+    }
+
+    /* li 요소의 스타일을 정의합니다. */
+    .card-body ul li {
+        font-weight: bold; /* 글자 크기를 굵게 조정 */
+        margin-bottom: 8px; /* 요소 간의 간격을 조정 */
+        padding: 5px 10px; /* li 내부 패딩 */
+        background-color: #fff8dc; /* 배경색 설정 (연한 베이지 색) */
+        border-radius: 5px; /* 모서리 둥글게 */
+        transition: background-color 0.3s ease, color 0.3s ease; /* 전환 효과 */
+    }
+
+    /* li 요소 호버 시 스타일 */
+    .card-body ul li:hover {
+        background-color: #d2b48c; /* 호버 시 배경색 설정 */
+        color: #333; /* 호버 시 텍스트 색상 조정 */
+    }
+
+    /* 대표 문구 스타일 */
+    .welcome-message {
+        text-align: center; /* 문구를 가운데 정렬 */
+        padding: 20px; /* 패딩 추가 */
+        background-color: #fff8dc; /* 배경색 설정 */
+        border-radius: 10px; /* 모서리 둥글게 */
+        font-size: 1.5em; /* 글자 크기 조정 */
+        font-weight: bold; /* 글자 굵게 */
+        margin-bottom: 20px; /* 하단 마진 추가 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+    }
+</style>
+<body style="background-image: url('/images/photo-8683829_1280.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+<div th:replace="fragments/header.html :: header('home')" style="margin-bottom: 30px;"></div>
+
+<!-- 대표 문구 추가 -->
+<div class="container">
+    <div class="welcome-message">
+        추억 커뮤니티 사이트에 오신 것을 환영합니다!
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12 order-lg-2 mb-4 mr-auto" style="float: right;">
+        <div class="card shadow-sm mb-4">
+            <div class="card-body" style="background-color: #D2B48C;">
+                <h2 class="card-title" style="font-size: 1.3em;">전체 유저 정보</h2>
+                <ul class="list-unstyled">
+                    <li>&ast; 전체 유저: [[${userCntDto.totalUserCnt}]]명</li>
+                    <li>&ast; 관리자: [[${userCntDto.totalAdminCnt}]]명</li>
+                    <li>&ast; BRONZE 유저: [[${userCntDto.totalBronzeCnt}]]명</li>
+                    <li>&ast; SILVER 유저: [[${userCntDto.totalSilverCnt}]]명</li>
+                    <li>&ast; GOLD 유저: [[${userCntDto.totalGoldCnt}]]명</li>
+                    <li>&ast; BLACKLIST 유저: [[${userCntDto.totalBlacklistCnt}]]명</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-body" style="background-color: #D2B48C;">
+                <h2 class="card-title" style="font-size: 1.3em;">전체 게시판 정보</h2>
+                <ul class="list-unstyled">
+                    <li>&ast; 전체 글: [[${boardCntDto.totalBoardCnt}]]개</li>
+                    <li>&ast; 공지: [[${boardCntDto.totalNoticeCnt}]]개</li>
+                    <li>&ast; 가입 인사: [[${boardCntDto.totalGreetingCnt}]]개</li>
+                    <li>&ast; 자유게시판 게시글: [[${boardCntDto.totalFreeCnt}]]개</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="container">
+            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner" style="width: 800px;">
+                    <div class="carousel-item active">
+                        <img src="/메인이미지/가입인사.png" class="d-block w-100" >
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/메인이미지/자유게시판.png" class="d-block w-100" >
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/메인이미지/추억의%20장소.png" class="d-block w-100" >
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/메인이미지/추억전시관.png" class="d-block w-100" >
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">이전</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">다음</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+</body>
+</html>

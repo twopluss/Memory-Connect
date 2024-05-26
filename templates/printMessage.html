@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>추억 커뮤니티 사이트</title>
+</head>
+<body>
+  <script th:inline="javascript">
+    window.onload = function () {
+      if([[${message}]] != null) {
+        alert([[${message}]])
+      }
+      window.location.href = [[${nextUrl}]]
+    }
+  </script>
+</body>
+</html>
